@@ -1,0 +1,25 @@
+# Website infos
+title: "Xin's Site"
+description: ""
+author: "Xin"
+email: "xinyi34@outlook.com"
+lang: "en_US"
+
+url: ""
+baseurl: ""
+
+github: "https://github.com/xin1z"
+twitter: "https://github.com/xin1_z"
+# jekyll
+markdown: kramdown
+permalink: /:categories/:title/
+
+# extensions
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+#paginate
+paginate: 5
+paginate_path: "/page:num/"

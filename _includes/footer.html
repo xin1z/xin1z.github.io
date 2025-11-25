@@ -1,0 +1,32 @@
+<footer class="site-footer h-card">
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <!-- The column on the left: Author's info  -->
+      <div class="footer-col footer-col-left">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+          {%- include social.html -%}
+        </ul>
+      </div>
+
+      <!-- On the right: A simple profile  -->
+      <div class="footer-col footer-col-right">
+        <p>{{ site.description | escape }}</p>
+        <p>Unless otherwise specified, all articles on this site are licensed under the<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+

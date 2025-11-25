@@ -1,0 +1,67 @@
+---
+layout: default
+---
+<div class="post-wrapper">
+
+  <!-- toc-list on the left side -->
+  <nav class="post-toc">
+    <ul id="toc-list"></ul>
+  </nav>
+
+  <!-- content -->
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      <p class="post-meta">
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: "%b %-d, %Y" }}
+        </time>
+        {%- if page.author -%}
+          • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
+            </span>
+        {%- endif -%}
+      </p>
+    </header>
+
+    <div class="post-content e-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    {%- if site.disqus.shortname -%}
+      {%- include disqus_comments.html -%}
+    {%- endif -%}
+
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  </article>
+</div>
+
+<!-- JavaScript: automaticaclly generate TOC on the left side -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const content = document.querySelector(".post-content");
+  const tocList = document.getElementById("toc-list");
+  if (!content || !tocList) return;
+
+  const headers = content.querySelectorAll("h2, h3, h4");
+
+  headers.forEach(header => {
+    // if there's no id, generate one
+    if (!header.id) {
+      header.id = header.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+    }
+
+    const li = document.createElement("li");
+    li.className = "toc-" + header.tagName.toLowerCase(); // toc-h2 / toc-h3 / toc-h4
+
+    const a = document.createElement("a");
+    a.href = "#" + header.id;
+    a.textContent = header.textContent;
+
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+});
+</script>
+
