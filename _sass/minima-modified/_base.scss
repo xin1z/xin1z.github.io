@@ -28,8 +28,11 @@ body {
   flex-direction: column;
 }
 
-
-
+hr {
+  border: none;
+  border-top: 1px solid $grey-color-light;
+  margin: $spacing-unit * 1.2 0;
+}
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */

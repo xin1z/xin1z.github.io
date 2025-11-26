@@ -3,10 +3,6 @@ layout: default
 ---
 <div class="post-wrapper">
 
-  <!-- toc-list on the left side -->
-  <nav class="post-toc">
-    <ul id="toc-list"></ul>
-  </nav>
 
   <!-- content -->
   <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
@@ -24,6 +20,12 @@ layout: default
         {%- endif -%}
       </p>
     </header>
+    <!-- toc-list on the left side -->
+    {% if page.toc %}
+    <nav class="post-toc">
+        <ul id="toc-list"></ul>
+    </nav>
+    {% endif %}
 
     <div class="post-content e-content" itemprop="articleBody">
       {{ content }}
