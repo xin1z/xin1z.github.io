@@ -134,6 +134,13 @@ code:not(pre code) {
     color: var(--text-light);
 }
 
+.article-metadata {
+    font-size: 0.95rem;
+    font-weight: 200;
+    color: var(--text-secondary);
+    margin: 0 0;
+}
+
 article {
     margin-left: auto;
     margin-right: auto;
