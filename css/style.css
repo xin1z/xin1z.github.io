@@ -101,7 +101,7 @@ code:not(pre code) {
 }
 
 .top-nav-inner {
-    max-width: 980px;
+    max-width: 900px;
     display: flex;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -125,7 +125,7 @@ code:not(pre code) {
     margin: 0;
     padding: 0;
     gap: 2rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .logo {
